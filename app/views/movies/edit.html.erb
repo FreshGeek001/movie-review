@@ -1,9 +1,5 @@
 <div class="col-md-4 col-md-offset-4">
   <h1 class="text-center">编辑电影</h1>
   <hr>
-  <%= simple_form_for @movie do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.submit "Submit", class:"btn btn-primary", data: {disable_with: "Submiting..."} %>
-  <% end %>
+  <%= render "form" %>
 </div>
