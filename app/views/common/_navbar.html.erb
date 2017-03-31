@@ -6,9 +6,26 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to("登录","#")%>
-        </li>
+      <% if !current_user %>
+      <li><a href="/users/sign_up">
+        <span class="fa fa-user-plus"></span>Sign up</a>
+      </li>
+      <li><a href="/users/sign_in">
+            <span class="fa fa-sign-in"></span>Sign in</a>
+      </li>
+      <% else %>
+      <li class="dropdown">
+        <a href="#", class="dropdown-toggle" data-toggle="dropdown">
+          Hi,<%= current_user.email %>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="/users/sign_out" data-method="delete">
+                <span class="fa fa-sign-out"></span>Sign out</a>
+          </li>
+        </ul>
+      </li>
+      <% end %>
       </ul>
     </div>
   </div>
