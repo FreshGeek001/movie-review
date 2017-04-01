@@ -1,5 +1,9 @@
 <div class="col-md-4 col-md-offset-4">
   <h1 class="text-center">编辑电影</h1>
   <hr>
+  <% if @movie.image.present? %>
+  <span>目前电影海报</span>
+  <%= image_tag(@movie.image.thumb.url)%>
+  <% end %>
   <%= render "form" %>
 </div>

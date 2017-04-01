@@ -2,6 +2,16 @@
   <% if current_user && current_user == @movie.user %>
   <%= link_to("Edit", edit_movie_path(@movie), class:"btn btn-primary pull-right")%>
   <% end %>
+  <% if @movie.image.present? %>
+  <%= image_tag(@movie.image.medium.url)%>
+  <% else %>
+  <%= image_tag("http://placehold.it/400x400&text=No Pic")%>
+  <% end %>
 <h2><%= @movie.title %></h2>
 <p><%= @movie.description %></p>
+  <% if current_user && current_user == @movie.user %>
+  <%= link_to("Edit", edit_movie_path(@movie))%>
+  |
+  <%= link_to("Delete", movie_path(@movie),method: :delete, data: {confirm:"Are you sure?"})%>
+  <% end %>
 </div>
