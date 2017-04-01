@@ -1,5 +1,5 @@
 <div class="col-md-12">
-  <%= if current_user && current_user == @movie.user %>
+  <% if current_user && current_user == @movie.user %>
   <%= link_to("Edit", edit_movie_path(@movie), class:"btn btn-primary pull-right")%>
   <% end %>
 <h2><%= @movie.title %></h2>
