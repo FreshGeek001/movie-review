@@ -1,0 +1,16 @@
+<div class="favorites-index">
+  <h1>Favorite movies</h1>
+  <div class="row">
+    <% @movies.each do |movie| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to movie_path(movie) do %>
+        <% if movie.image.present? %>
+          <%= image_tag(movie.image.medium.url) %>
+        <% else %>
+          <%= image_tag("http://placehold.it/300x500&text=No Pic")%>
+          <% end %>
+        <% end %>
+    </div>
+      <% end %>
+  </div>
+</div>

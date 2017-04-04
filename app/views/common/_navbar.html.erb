@@ -20,6 +20,10 @@
           <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
+          <li>
+            <%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-gratipay"), favorites_path ) %>
+          </li>
+
           <li><a href="/users/sign_out" data-method="delete">
                 <span class="fa fa-sign-out"></span>Sign out</a>
           </li>

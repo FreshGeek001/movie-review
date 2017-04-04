@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
-  before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy,:favorite,:unfavorite]
   before_action :find_group_and_check_permission, only: [:edit,:update,:destroy]
+
   def index
     @movies = Movie.all
   end
@@ -40,6 +41,18 @@ class MoviesController < ApplicationController
 
     @movie.destroy
     redirect_to movies_path, alert:"Movie Deleted"
+  end
+
+  def favorite
+    @movie = Movie.find(params[:id])
+    current_user.favorite_movies << @movie
+    redirect_to :back
+  end
+
+  def unfavorite
+    @movie = Movie.find(params[:id])
+    current_user.favorite_movies.delete(@movie)
+    redirect_to :back
   end
 
   private
