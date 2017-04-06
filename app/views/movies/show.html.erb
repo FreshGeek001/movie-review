@@ -36,9 +36,10 @@
     <% end %>
 
     <div class="favorite">
+       点击收藏可以对电影评论哦！！！
        <% if user_signed_in? %>
        <% if !current_user.is_fan_of?(@movie) %>
-         点击收藏可以对电影评论哦！！！
+
         <%= link_to favorite_movie_path(@movie), :class => "like btn btn-default",method: :post do %>
         <i class="fa fa-heart" aria-hidden="true"></i>
         <% end %>
