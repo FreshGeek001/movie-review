@@ -17,3 +17,53 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+
+body {
+  background-color: #DD2C00;
+}
+
+.navbar-default {
+  background-color: #212121;
+  border-color: #212121;
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0; //圆角为0
+  }
+}
+
+.navbar-default .navbar-brand {
+  color: #FAFAFA; //字体颜色
+  padding: 10px 15px; //上下10px,左右15px
+  line-height: 30px; //文字行高
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: #DD2C00; //鼠标放置在链接上的文字颜色
+  background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #FAFAFA;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  color: #DD2C00;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: #DD2C00;
+  background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  background-color: #212121;
+  color: #DD2C00;
+}
