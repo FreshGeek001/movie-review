@@ -1,7 +1,17 @@
 <h2 class="text-center">新增影评</h2>
 <div class="col-md-4 col-md-offset-4">
   <%= simple_form_for [@movie,@post] do |f| %>
+    <div id="star-rating"></div>
     <%= f.input :content, input_html: { class: "form-control"} %>
     <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
   <% end %>
 </div>
+
+<script>
+//ratyrate
+
+     $('#star-rating').raty({
+          path: '/images/',
+          scoreName: 'post[rating]'
+      });
+</script>
